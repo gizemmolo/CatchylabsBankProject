@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class BaseMethods extends BaseTests {
+public class BaseMethods extends BaseTest {
 
 
     public static void wait(By by) {

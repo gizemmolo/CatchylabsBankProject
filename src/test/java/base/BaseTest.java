@@ -13,7 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class BaseTests {
+public class BaseTest {
 
     protected static WebDriver driver = null;
     private Logger logger = LoggerFactory.getLogger(getClass());
