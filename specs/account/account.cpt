@@ -1,0 +1,86 @@
+Created by gizem.molo on 9.01.2025
+
+This is a concept file with following syntax for each concept.
+# Catchylabs sayfasina login olunur
+* "https://catchylabs-webclient.testinium.com/" adresine git
+* "gizem.molo" textini username alanina yaz
+* "Gizemmolo1025." textini password alanina yaz
+* Login butonuna tikla
+
+# Open Money Transfer butonuna tiklanir
+* Open Money Transfer butonunun gorunur oldugunu kontrol et
+* Open Money Transfer butonuna tikla
+
+# Hesap bilgisi sayfasi ogelerinin dogru sekilde goruntulendigi kontrol edilir
+* My account alaninin gorunur oldugunu kontrol et
+* Account name alaninin gorunur oldugunu kontrol et
+* Account type alaninin gorunur oldugunu kontrol et
+* Creation time alanininin gorunur oldugunu kontrol
+* Amount alaninin gorunur oldugunu kontrol et
+* Transactions alaninin gorunur oldugunu kontrol et
+
+# Transfer Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
+* Transfer Money butonuna tikla
+* Transfer money menusunun acildigini kontrol et
+* Sender account textinin gorunur oldugunu kontrol et
+* Receiver account textinin gorunur oldugunu kontrol et
+
+# Amount alanina tutar girilir ve girilen tutar kaydedilir
+* Amount alanina "20" gir ve tutari kaydet
+
+# Send butonuna tiklanir ve My accout sayfasinin goruntulendigi kontrol edilir
+* Send butonuna tikla
+* My account alaninin gorunur oldugunu kontrol et
+* "5" saniye bekle
+
+# Transactions alaninda gonderilen transfer tutari kontrol edilir
+* Transactions alanindaki Amount degerini transfer money icin kontrol et
+
+# Edit Account butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
+* Edit Account butonuna tikla
+* Edit account menusunun acildigini kontrol et
+* Account name textinin gorunur oldugunu kontrol et
+
+# Account name alanina hesap ismi girilir ve girilen isim kaydedilir
+* Account name alanina "TEST" gir ve ismi kaydet
+
+
+# Update butonuna tiklanir ve My account sayfasinin goruntulendigi kontrol edilir
+* Update butonuna tikla
+* My account alaninin gorunur oldugunu kontrol et
+* "3" saniye bekle
+
+# Duzenlenen account name kontrol edilir
+* My account alanindaki Account name degerini kontrol et
+
+# Add Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
+* Add Money butonuna tikla
+* Add Money menusunun acildigini kontrol et
+* Card number textinin gorunur oldugunu kontrol et
+* Card holder textinin gorunur oldugunu kontrol et
+* Expiry date textinin gorunur oldugunu kontrol et
+* CVV textinin gorunur oldugunu kontrol et
+* Amount textinin gorunur oldugunu kontrol et
+
+# Kredi karti bilgileri girilir
+* Kart numarasi alanina "1234123412341234" gir
+* Card holder alanina "Gizem Molo" gir
+* Expiry Date alanina "1026" gir
+* CVV alanina "110" gir
+* Amount alanina "100" gir ve kaydet
+
+# Add butonuna tiklanir ve My accout sayfasinin goruntulendigi kontrol edilir
+* Add butonuna tikla
+* My account alaninin gorunur oldugunu kontrol et
+* "3" saniye bekle
+
+# Transactions alaninda karta yatirilan tutar kontrol edilir
+* Transactions alanindaki Amount degerini add money icin kontrol et
+
+# Sender account ve receiver account alanlarinin secili geldigi goruntulenir
+* Sender account alaninin goruntulendigini kontrol et
+* Receiver account degerinin "Testinium-2" icerdigini kontrol et
+
+# Send butonunun tiklanabilir olmadigi kontrol edilir
+* Send butonunun pasif oldugunu kontrol et
+
