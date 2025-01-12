@@ -33,21 +33,25 @@ public class LoginSteps extends BaseTest {
     @Step("<text> textini username alanina yaz")
     public void enterUsername(String text) {
         loginPage.sendTextUsernameField(text);
+        logger.info("Username alanina" + text+ "texti girildi");
     }
 
     @Step("<text> textini password alanina yaz")
     public void sendTextPasswordField(String text) {
         loginPage.sendTextPasswordField(text);
+        logger.info("Password alanina" + text+ "texti girildi");
     }
 
     @Step("<text> uyari textini kontrol et")
     public void checkAlertMessageInvalidLogin(String text) {
         loginPage.checkAlertMessage(text);
+        logger.info(text + "uyari mesaji goruntulendi");
     }
 
     @Step("Login butonuna tikla")
     public void clickLoginButton() {
         loginPage.clickLoginButton();
+        logger.info("Login butonuna tiklandi");
     }
 
     @Step("Open Money Transfer butonunun gorunur oldugunu kontrol et")
@@ -63,14 +67,15 @@ public class LoginSteps extends BaseTest {
     }
 
 
-    @Step("Back tusuna tikla")
+    @Step("Back butonuna tikla")
     public void clickBackButton(){
         loginPage.clickBackButton();
+        logger.info("Back butonuna tiklandi");
     }
-    @Step("logout tusuna tikla")
+    @Step("logout butonuna tikla")
     public void clickLogoutButton(){
         loginPage.clickLogoutButton();
-
+        logger.info("Logout butonuna tiklandi.");
     }
 }
 

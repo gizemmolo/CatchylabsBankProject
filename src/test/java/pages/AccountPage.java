@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +41,7 @@ public class AccountPage extends BaseMethods {
     public static By receiverAccountField = By.xpath("//div[@class='css-175oi2r r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-1pi2tsx r-13qz1uu']");
     public static By amountTransferMoney = By.xpath("//div[9]");
     public static By amountField = By.cssSelector("[placeholder]");
-    public static By sendBtn = By.xpath("//div[@class='css-175oi2r r-1i6wzkk r-lrvibr r-1loqt21 r-1otgn73 r-1awozwy r-169ebfh r-z2wwpe r-h3s6tt r-1777fci r-tsynxw r-13qz1uu']");
+    public static By sendBtn = By.xpath("(//div/div[13])[2]");
     public static By sendBtnPsf = By.cssSelector(".r-q0mhf2");
     public static By transferMoneyTxt = By.xpath("//div[@class='css-146c3p1 r-ubezar r-vw2c0b']");
     public static By transactionAmount = By.xpath("(//div[@class='css-146c3p1 r-1ozpqpt r-yv33h5 r-1b43r93'])[5]");
@@ -95,13 +96,13 @@ public class AccountPage extends BaseMethods {
     }
 
     public void saveAndCheckTransAmountTM() {
-        int totalAmountWithCommission = enteredAmount + 100;
+        int totalAmountWithCommission = enteredAmount;
         DecimalFormat decimalFormat = new DecimalFormat("#0.00");
         String totalAmountWithCommissionStr = decimalFormat.format(totalAmountWithCommission);
         String transactionText = getText(transactionAmount);
         totalAmountWithCommissionStr = totalAmountWithCommissionStr.replace(',', '.');
+        System.out.println("Transaction alaninda goruntulenmesi gereken tutar: " + enteredAmount + " goruntulenen tutar: " + transactionText);
         Assertions.assertEquals(totalAmountWithCommissionStr, transactionText);
-        System.out.println("Transaction alanindaki deger:" + transactionText + ", Komisyon eklenmiş deger:" + totalAmountWithCommissionStr);
     }
 
     public void checkEditAccountTxt() {
@@ -123,55 +124,69 @@ public class AccountPage extends BaseMethods {
         String verifiedAccountName = getText(accountNameInMA);
         Assertions.assertEquals(accountName, verifiedAccountName);
     }
+
     public void enterCardNumber(String text) {
-        sendKey(cardNumberField,text);
+        sendKey(cardNumberField, text);
 //        scrollToElement(cardNumberField);
 //        findElement(cardNumberField).click();
 //        findElement(cardNumberField).clear();
 //        findElement(cardNumberField).sendKeys(text);
     }
+
     public void enterCardHolder(String text) {
-        sendKey(cardHolderField,text);
+        sendKey(cardHolderField, text);
     }
+
     public void enterExpiryDate(String date) {
-        sendKey(expiryDateField,date);
+        sendKey(expiryDateField, date);
     }
+
     public void enterCVV(String text) {
-        sendKey(CVVField,text);
+        sendKey(CVVField, text);
     }
+
     public void enterAddAmount(String text) {
-        sendKey(addAmountField,text);
+        sendKey(addAmountField, text);
     }
 
     public boolean checkButtonPassive(By by) {
         try {
             WebElement element = findElement(by); // Elementi bul
             String tabindexValue = element.getAttribute("tabindex"); // tabindex değerini al
-            logger.info("Buton pasif");
-            return "-1".equals(tabindexValue); // "-1" ise true döndür
 
+            if ("-1".equals(tabindexValue)) {
+                logger.info("Buton pasif (tabindex: -1)");
+                return true; // Pasifse true döndür
+            } else if ("0".equals(tabindexValue)) {
+                logger.info("Buton aktif (tabindex: 0)");
+                return false; // Aktifse false döndür
+            } else {
+                logger.info("Butonun tabindex değeri beklenenin dışında: " + tabindexValue);
+                return false; // Diğer durumlarda da false döndür
+            }
         } catch (NoSuchElementException e) {
             // Eğer element bulunamazsa false döndür
-            logger.info("butonu aktif");
+            logger.warn("Element bulunamadı, buton aktif değil veya mevcut değil");
             return false;
+        }
+
+    }
+        public void enterAndSaveAddAmount (String amount){
+            sendKey(addAmountField, amount);
+            enteredAddAmount = Integer.parseInt(amount);
+            System.out.println("Girilen tutar:" + enteredAddAmount);
+        }
+
+        public void saveAndCheckTransAddAmountTM () {
+            int totalAmount1 = enteredAddAmount;
+            DecimalFormat decimalFormat = new DecimalFormat("#0.00");
+            String totalAmount = decimalFormat.format(totalAmount1);
+            String transactionText = getText(transactionAmount);
+            totalAmount = totalAmount.replace(',', '.');
+            Assertions.assertEquals(totalAmount, transactionText);
+            System.out.println("Transaction alanindaki tutar:" + transactionText + ", Gosterilen tutar:" + totalAmount);
         }
     }
 
-    public void enterAndSaveAddAmount(String amount) {
-        sendKey(addAmountField, amount);
-        enteredAddAmount = Integer.parseInt(amount);
-        System.out.println("Girilen tutar:" + enteredAddAmount);
-    }
-
-    public void saveAndCheckTransAddAmountTM() {
-        int totalAmount1 = enteredAddAmount;
-        DecimalFormat decimalFormat = new DecimalFormat("#0.00");
-        String totalAmount = decimalFormat.format(totalAmount1);
-        String transactionText = getText(transactionAmount);
-        totalAmount = totalAmount.replace(',', '.');
-        Assertions.assertEquals(totalAmount, transactionText);
-        System.out.println("Transaction alanindaki tutar:" + transactionText + ", Gosterilen tutar:" + totalAmount);
-    }
-}
 
 

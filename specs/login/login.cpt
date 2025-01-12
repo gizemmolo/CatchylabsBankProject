@@ -12,13 +12,16 @@ This is a concept file with following syntax for each concept.
 * Login butonuna tikla
 
 # Basarili giris yapildigi kontrol edilir
-//* "4" saniye bekle
 * Open Money Transfer butonunun gorunur oldugunu kontrol et
 
 # Gecersiz giris uyari mesaji goruntulenir
 * "Username or Password Invalid!" uyari textini kontrol et
 
-/# cikis yap
-/* Back tusuna tikla
-/* logout tusuna tikla
-/* "5" saniye bekle
+# Back butonuna tiklanir
+* Back butonuna tikla
+* Open Money Transfer butonunun gorunur oldugunu kontrol et
+
+# logout butonuna tiklanir
+* logout butonuna tikla
+* Username alaninin gorunur oldugunu kontrol et
+* Password alaninin gorunur oldugunu kontrol et

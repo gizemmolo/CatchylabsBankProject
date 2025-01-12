@@ -6,18 +6,16 @@ This is an executable specification file which follows markdown syntax.
 Every heading in this file denotes a scenario. Every bulleted point denotes a step.
 
 
-TC_004: My Account Sayfasi Goruntulenmesi ve Ogelerin Dogrulanmasi
+TS_005: My Account Sayfasi Goruntulenmesi ve Ogelerin Dogrulanmasi
 ----------------
-Tags: account, moneyTransfer, positive
+Tags: account,moneyTransfer,positive
 * Catchylabs sayfasina login olunur
 * Open Money Transfer butonuna tiklanir
 * Hesap bilgisi sayfasi ogelerinin dogru sekilde goruntulendigi kontrol edilir
 
-
-
-TC_005:Gecerli Hesaba Başarili Para Transferi Islemi
+TS_006: Gecerli Hesaba Başarili Para Transferi Islemi
 ----------------
-Tags: account, moneyTransfer, positive
+Tags: account,moneyTransfer,positive
 * Catchylabs sayfasina login olunur
 * Open Money Transfer butonuna tiklanir
 * Transfer Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
@@ -25,18 +23,27 @@ Tags: account, moneyTransfer, positive
 * Send butonuna tiklanir ve My accout sayfasinin goruntulendigi kontrol edilir
 * Transactions alaninda gonderilen transfer tutari kontrol edilir
 
-//TC_006:Tutar Girilmeden Para Transferi Islemi
-//----------------
-//Tags: account, moneyTransfer, negative
-//* Catchylabs sayfasina login olunur
-//* Open Money Transfer butonuna tiklanir
-//* Transfer Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
-//* Sender account ve receiver account alanlarinin secili geldigi goruntulenir
-//* Send butonunun tiklanabilir olmadigi kontrol edilir
 
-TC_007:Hesaba Kart Ile Para Yatirma Islemi
+TS_007: Tutar Girilmeden Para Transferi Islemi
+----------------
+Tags: account,moneyTransfer,negative
+* Catchylabs sayfasina login olunur
+* Open Money Transfer butonuna tiklanir
+* Transfer Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
+* Send butonunun tiklanabilir olmadigi kontrol edilir
+
+TS_008: Tutar Alanina Negatif Sayı Girilerek Para Transferi Islemi
+-------------------
+Tags: account,moneyTransfer,negative
+* Catchylabs sayfasina login olunur
+* Open Money Transfer butonuna tiklanir
+* Transfer Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
+* Amount alanina eksi tutar girilir ve girilen tutar kaydedilir
+* Send butonunun tiklanabilir olmadigi kontrol edilir
+
+TS_009: Kart ile Para Yatirma Isleminin Transactions Alanında Kontrolu
 ------------------
-Tags:account, moneyAdd,positive
+Tags:account,moneyAdd,positive
 * Catchylabs sayfasina login olunur
 * Open Money Transfer butonuna tiklanir
 * Add Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
@@ -45,15 +52,23 @@ Tags:account, moneyAdd,positive
 * Transactions alaninda karta yatirilan tutar kontrol edilir
 
 
-
-TC_008:Hesap Isminin Duzenlenmesi Islemi
+TS_010: Hesap Isminin Duzenlenmesi Islemi
 ---------------
-Tags: account, edit, positive
+Tags: account,edit,positive
 * Catchylabs sayfasina login olunur
 * Open Money Transfer butonuna tiklanir
 * Edit Account butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
 * Account name alanina hesap ismi girilir ve girilen isim kaydedilir
 * Update butonuna tiklanir ve My account sayfasinin goruntulendigi kontrol edilir
 * Duzenlenen account name kontrol edilir
+
+TS_011: Hesapta Bulunan Bakiyeden Fazla Tutar Transfer Edilememesi Kontrolu
+----------------
+Tags: account,moneyTransfer,negative
+* Catchylabs sayfasina login olunur
+* Open Money Transfer butonuna tiklanir
+* Transfer Money butonuna tiklanir ve bilgilerin dogru listelendigi kontrol edilir
+* Amount alanina eksi tutar girilir ve girilen tutar kaydedilir
+* Send butonunun tiklanabilir olmadigi kontrol edilir
 
 

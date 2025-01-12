@@ -10,9 +10,9 @@ This is a concept file with following syntax for each concept.
 # Open Money Transfer butonuna tiklanir
 * Open Money Transfer butonunun gorunur oldugunu kontrol et
 * Open Money Transfer butonuna tikla
+* My account alaninin gorunur oldugunu kontrol et
 
 # Hesap bilgisi sayfasi ogelerinin dogru sekilde goruntulendigi kontrol edilir
-* My account alaninin gorunur oldugunu kontrol et
 * Account name alaninin gorunur oldugunu kontrol et
 * Account type alaninin gorunur oldugunu kontrol et
 * Creation time alanininin gorunur oldugunu kontrol
@@ -26,7 +26,13 @@ This is a concept file with following syntax for each concept.
 * Receiver account textinin gorunur oldugunu kontrol et
 
 # Amount alanina tutar girilir ve girilen tutar kaydedilir
-* Amount alanina "20" gir ve tutari kaydet
+* Amount alanina "100" gir ve tutari kaydet
+
+# Amount alanina eksi tutar girilir ve girilen tutar kaydedilir
+* Amount alanina "-100" gir ve tutari kaydet
+
+# Amount alanina hesap bakiyesinden yuksek tutar girilir ve girilen tutar kaydedilir
+* Amount alanina "-500000" gir ve tutari kaydet
 
 # Send butonuna tiklanir ve My accout sayfasinin goruntulendigi kontrol edilir
 * Send butonuna tikla

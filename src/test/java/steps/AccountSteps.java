@@ -25,6 +25,7 @@ public class AccountSteps extends BaseTest {
     @Step("<saniye> saniye bekle")
     public void waitSeconds(int saniye) throws InterruptedException {
         Thread.sleep(saniye * 1000);
+        logger.info(saniye + "beklendi");
     }
 
     @Step("My account alaninin gorunur oldugunu kontrol et")
@@ -37,21 +38,21 @@ public class AccountSteps extends BaseTest {
     @Step("Account name alaninin gorunur oldugunu kontrol et")
     public void isAccountNameDisplayed() {
         //assertTrue(accountPage.isAccountElementDisplayed(accountNameTxt), "Account Name goruntulenemedi");
-        assertTrue(accountPage.isAccountElementCheck(accountNameTxt), "Account Name goruntulenemedi");
+        assertTrue(accountPage.isAccountElementCheck(accountNameTxt), "Account name goruntulenemedi");
 
-        logger.info("Account Name texti goruntulendi");
+        logger.info("Account name texti goruntulendi");
     }
 
     @Step("Account type alaninin gorunur oldugunu kontrol et")
     public void isAccountTypeDisplayed() {
-        assertTrue(accountPage.isAccountElementCheck(accountTypeTxt), "Account Type goruntulenemedi");
-        logger.info("Account Type texti goruntulendi");
+        assertTrue(accountPage.isAccountElementCheck(accountTypeTxt), "Account type goruntulenemedi");
+        logger.info("Account type texti goruntulendi");
     }
 
     @Step("Creation time alanininin gorunur oldugunu kontrol")
     public void isCreationTimeDisplayed() {
-        assertTrue(accountPage.isAccountElementCheck(creationTimeTxt), "Creation Time goruntulenemedi");
-        logger.info("Account Element texti goruntulendi");
+        assertTrue(accountPage.isAccountElementCheck(creationTimeTxt), "Creation time goruntulenemedi");
+        logger.info("Creation time texti goruntulendi");
     }
 
     @Step("Amount alaninin gorunur oldugunu kontrol et")
@@ -63,7 +64,7 @@ public class AccountSteps extends BaseTest {
     @Step("Transactions alaninin gorunur oldugunu kontrol et")
     public void isTransactionsDisplayed() {
         assertTrue(accountPage.isAccountElementCheck(transactionsTxt), "Transactions goruntulenemedi");
-        logger.info("Account Page texti goruntulendi");
+        logger.info("Transactions texti goruntulendi");
     }
 
 
@@ -101,16 +102,19 @@ public class AccountSteps extends BaseTest {
     @Step("Amount alanina <amount> gir ve tutari kaydet")
     public void enterAmount(String amount) {
         accountPage.enterAndSaveAmount(amount);
+        logger.info("Amount alanina" + amount + "degeri girildi");
     }
 
     @Step("Send butonuna tikla")
     public void clickSendButton() {
         accountPage.clickAccountElement(sendBtn);
+        logger.info("Send butonuna tiklandi");
     }
 
     @Step("Transactions alanindaki Amount degerini transfer money icin kontrol et")
     public void saveAndCheckTransAmountTM() {
         accountPage.saveAndCheckTransAmountTM();
+        logger.info("Transactions alanindaki Amount degeri kontrol edildi");
     }
 
     @Step("Edit Account butonuna tikla")
@@ -128,12 +132,13 @@ public class AccountSteps extends BaseTest {
     @Step("Account name textinin gorunur oldugunu kontrol et")
     public void checkAccountNameUp() {
         accountPage.checkAccountNameUp();
-        logger.info("Edit account texti goruntulendi");
+        logger.info("Account name texti goruntulendi");
     }
 
     @Step("Account name alanina <account> gir ve ismi kaydet")
     public void enterAccountName(String account) {
         accountPage.editAccountNameAndSave(account);
+        logger.info("Account name alanina" + account + "texti girildi");
     }
 
     @Step("Update butonuna tikla")
@@ -157,7 +162,7 @@ public class AccountSteps extends BaseTest {
     @Step("Add Money menusunun acildigini kontrol et")
     public void addMoneyMenu() {
         assertTrue(accountPage.isAccountElementCheck(addMoneyTxt), "Add money menusu goruntulenemedi");
-        logger.info("Transfer money texti goruntulendi");
+        logger.info("Add Money texti goruntulendi");
     }
 
     @Step("Card number textinin gorunur oldugunu kontrol et")
@@ -180,8 +185,8 @@ public class AccountSteps extends BaseTest {
 
     @Step("CVV textinin gorunur oldugunu kontrol et")
     public void checkCVVDate() {
-        assertTrue(accountPage.isAccountElementCheck(CVVTxt), "Transactions goruntulenemedi");
-        logger.info("Expiry date texti goruntulendi");
+        assertTrue(accountPage.isAccountElementCheck(CVVTxt), "CVV goruntulenemedi");
+        logger.info("CVV texti goruntulendi");
     }
 
     @Step("Amount textinin gorunur oldugunu kontrol et")
@@ -192,23 +197,27 @@ public class AccountSteps extends BaseTest {
 
 
     @Step("Kart numarasi alanina <number> gir")
-    public void enterCardNumber(String text) {
-        accountPage.enterCardNumber(text);
+    public void enterCardNumber(String number) {
+        accountPage.enterCardNumber(number);
+        logger.info("Kart numarasi alanina" + number + "girildi");
     }
 
     @Step("Card holder alanina <text> gir")
     public void enterCardHolder(String text) {
         accountPage.enterCardHolder(text);
+        logger.info("Card holder alanina" + text + "girildi");
     }
 
     @Step("Expiry Date alanina <date> gir")
     public void enterExpiryDate(String date) {
         accountPage.enterExpiryDate(date);
+        logger.info("Expiry Date alanina" + date + "girildi");
     }
 
     @Step("CVV alanina <text> gir")
     public void enterCVV(String text) {
         accountPage.enterCVV(text);
+        logger.info("CVV alanina" + text + "girildi");
     }
 
 
@@ -219,13 +228,13 @@ public class AccountSteps extends BaseTest {
 
     @Step("Send butonunun pasif oldugunu kontrol et")
     public void checkSendButton() {
-        assertTrue(accountPage.checkButtonPassive(sendBtnPsf),"Send butonu aktif");
+        assertTrue(accountPage.checkButtonPassive(sendBtn),"Send butonu aktif");
         logger.info("Send botunu pasif");
-
     }
     @Step("Amount alanina <amount> gir ve kaydet")
     public void enterAddAmount(String amount) {
         accountPage.enterAndSaveAddAmount(amount);
+        logger.info("Amount alanina" + amount + "girildi");
     }
 
     @Step("Add butonuna tikla")
@@ -236,6 +245,7 @@ public class AccountSteps extends BaseTest {
     @Step("Transactions alanindaki Amount degerini add money icin kontrol et")
     public void saveAndCheckTransAddAmountTM() {
         accountPage.saveAndCheckTransAddAmountTM();
+        logger.info("Transactions alanindaki Amount degeri kontrol edildi");
     }
 
 }
