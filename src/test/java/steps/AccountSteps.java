@@ -2,16 +2,10 @@ package steps;
 
 import base.BaseTest;
 import com.thoughtworks.gauge.Step;
-import dev.failsafe.internal.util.Assert;
-import org.apache.commons.logging.Log;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.AccountPage;
 import pages.LoginPage;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static pages.AccountPage.*;
 import static pages.AccountPage.cardSend;
@@ -20,7 +14,6 @@ public class AccountSteps extends BaseTest {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
     private AccountPage accountPage = new AccountPage();
-    private LoginPage loginPage = new LoginPage();
 
     @Step("<saniye> saniye bekle")
     public void waitSeconds(int saniye) throws InterruptedException {

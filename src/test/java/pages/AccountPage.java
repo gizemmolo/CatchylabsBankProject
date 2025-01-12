@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +18,6 @@ public class AccountPage extends BaseMethods {
     public static By creationTimeTxt = By.xpath("//div[.='Creation time']");
     public static By amountTxt = By.xpath("//div[@class='css-146c3p1 r-1ozpqpt r-g6644c r-1b43r93 r-vw2c0b r-1j6l8hp' and contains(text(),'Amount')]");
     public static By transactionsTxt = By.xpath("//div[.='Transactions']");
-    public static By transactionField = By.cssSelector(".r-150rngu");
     public static By transferMoneyBtn = By.xpath("(//div[@class='css-146c3p1 r-jwli3a r-1b43r93'])[2]");
     public static By addMoneyBtn = By.xpath("(//div[@class='css-146c3p1 r-jwli3a r-1b43r93'])[3]");
     public static By addMoneyTxt = By.xpath("(//div[@dir='auto' and contains (text(),'Add money')])[1]");
@@ -39,10 +37,8 @@ public class AccountPage extends BaseMethods {
     public static By senderAccountField = By.xpath("//div[@class='css-175oi2r r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-1pi2tsx r-13qz1uu']//div[3]/select[1]");
     public static By receiverAccount = By.xpath("//div[.='Receiver account']");
     public static By receiverAccountField = By.xpath("//div[@class='css-175oi2r r-150rngu r-eqz5dr r-16y2uox r-1wbh5a2 r-11yh6sk r-1rnoaur r-agouwx r-1pi2tsx r-13qz1uu']");
-    public static By amountTransferMoney = By.xpath("//div[9]");
     public static By amountField = By.cssSelector("[placeholder]");
     public static By sendBtn = By.xpath("(//div/div[13])[2]");
-    public static By sendBtnPsf = By.cssSelector(".r-q0mhf2");
     public static By transferMoneyTxt = By.xpath("//div[@class='css-146c3p1 r-ubezar r-vw2c0b']");
     public static By transactionAmount = By.xpath("(//div[@class='css-146c3p1 r-1ozpqpt r-yv33h5 r-1b43r93'])[5]");
     public static By editAccountTxt = By.xpath("//div[@class='css-146c3p1 r-ubezar r-vw2c0b']");
