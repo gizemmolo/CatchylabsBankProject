@@ -73,7 +73,7 @@ mvn gauge:execute -DspecsDir=specs -Dtags="tagName"
 ---
 ## 📂 Proje Yapısı
 ```
-CatchylabsAutomationProject/
+CatchylabsBankProject/
 ├── logs/
 │   └── gauge.log               # Log kayıtları
 ├── reports/
